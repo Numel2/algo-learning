@@ -28,4 +28,6 @@ def bruh():
             low = middle + 1
     return print(-1)
 
-bruh()
+
+if __name__ == '__main__':
+    bruh()
