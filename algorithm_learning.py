@@ -1,6 +1,5 @@
-list = [6, 5, 4, 3, 2, 1 ]
+list = [6, 4, 5, 3, 1, 2]
 query = 5
-
 def bruteforce():
     position = 0
     while position < len(list):
@@ -14,6 +13,7 @@ def binary_search():
     low = 0
     high = len(list) - 1
     steps = 0
+    list.sort(reverse=True)
 
     while low <= high:
         middle = (low+high) // 2
@@ -22,7 +22,7 @@ def binary_search():
         print("lo:", low, "| mid:", middle, '| hi:', high, "| mid_number:", mid_num, '| query', query)
         steps += 1
         if mid_num == query:
-            return print(middle, 'steps:', steps)
+            return print("answer:", middle, '| steps:', steps)
         elif mid_num < query:
             high = middle - 1
         elif mid_num > query:
