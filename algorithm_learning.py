@@ -1,4 +1,4 @@
-list = [6, 5, 4, 3, 2, 1]
+list = [6, 5, 4, 3, 2, 1 ]
 query = 5
 
 def bruteforce():
@@ -10,18 +10,19 @@ def bruteforce():
     return print(-1)
 
 
-def bruh():
+def binary_search():
     low = 0
     high = len(list) - 1
+    steps = 0
 
     while low <= high:
         middle = (low+high) // 2
         mid_num = list[middle]
 
-        print("lo:", low, ", hi:", high, ", mid:", middle, ", mid_number:", mid_num)
-
+        print("lo:", low, "| mid:", middle, '| hi:', high, "| mid_number:", mid_num, '| query', query)
+        steps += 1
         if mid_num == query:
-            return print(middle)
+            return print(middle, 'steps:', steps)
         elif mid_num < query:
             high = middle - 1
         elif mid_num > query:
@@ -30,4 +31,4 @@ def bruh():
 
 
 if __name__ == '__main__':
-    bruh()
+    binary_search()
